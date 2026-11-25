@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SOKBARO – Restaurant gastronomique à Cotonou</title>
+<meta name="description" content="Cuisine gastronomique, ambiance jazz feutrée au bord de la mer. Réservation sur WhatsApp.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#fbf6ec;--fg:#0f2236;--card:#fff;--mute:#5d6b79;--gold:#b8832a;--line:#0f223622;--navy:#0b1a2b;--soft:#f3e9d4}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1a2b;--fg:#f3ead9;--card:#12283f;--mute:#9db0c4;--gold:#e0b25a;--line:#f3ead922;--soft:#12283f}}
+:root[data-theme="dark"]{--bg:#0b1a2b;--fg:#f3ead9;--card:#12283f;--mute:#9db0c4;--gold:#e0b25a;--line:#f3ead922;--soft:#12283f}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--fg);font-family:Jost,system-ui,sans-serif;line-height:1.6;font-size:17px;padding-bottom:88px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;line-height:1.05}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.w{max-width:960px;margin:0 auto;padding:0 20px}
+.demo{background:#e0b25a;color:#1b1203;text-align:center;font-size:.85rem;font-weight:600;padding:8px 14px}
+.hero{background:var(--navy);color:#f3ead9;position:relative;overflow:hidden;padding:30px 0 0;text-align:center}
+.hero .w{position:relative;z-index:2}
+.brand{letter-spacing:.35em;font-size:.8rem;color:#e0b25a;text-transform:uppercase}
+.hero h1{font-size:clamp(4rem,19vw,9.5rem);font-weight:700;letter-spacing:.04em;margin:34px 0 8px}
+.hero p.t{font-size:1.15rem;color:#c9d6e3;max-width:32ch;margin:0 auto 26px}
+.tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.tags span{border:1px solid #e0b25a77;color:#e0b25a;padding:6px 14px;border-radius:999px;font-size:.88rem}
+.btn{display:inline-block;background:#e0b25a;color:#1b1203;font-weight:600;padding:15px 30px;border-radius:999px;text-decoration:none;border:0;font:inherit;font-weight:600;cursor:pointer}
+.btn:hover{background:#efc775}
+.moon{position:absolute;right:-40px;top:40px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff3cf,#e0b25a 60%,#b8832a);opacity:.9;z-index:1}
+.sea{display:block;width:100%;height:90px;margin-top:34px;position:relative;z-index:2}
+section{padding:60px 0}
+h2{font-size:clamp(2.2rem,8vw,3.6rem);margin-bottom:8px}
+.sub{color:var(--mute);margin-bottom:30px;max-width:50ch}
+.amb{display:grid;gap:16px}
+@media(min-width:760px){.amb{grid-template-columns:repeat(3,1fr)}}
+.amb div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.amb .e{font-size:2rem}
+.amb b{display:block;margin:8px 0 4px;font-family:'Cormorant Garamond',serif;font-size:1.4rem}
+.amb span{color:var(--mute);font-size:.95rem}
+.menu{display:grid;gap:16px}
+@media(min-width:760px){.menu{grid-template-columns:1fr 1fr}}
+.dish{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.pic{height:150px;display:flex;align-items:center;justify-content:center;font-size:4.6rem;position:relative}
+.pic::after{content:"";position:absolute;inset:auto 0 0 0;height:40px;background:linear-gradient(transparent,var(--card))}
+.c1{background:linear-gradient(135deg,#8a3b1c,#e08a3c)}
+.c2{background:linear-gradient(135deg,#6b2a2a,#d9533a)}
+.c3{background:linear-gradient(135deg,#7a1f4a,#e0607f)}
+.c4{background:linear-gradient(135deg,#0f5560,#35b5a6)}
+.c5{background:linear-gradient(135deg,#4a3a8a,#9a7de0)}
+.c6{background:linear-gradient(135deg,#1c5a3a,#7cc46a)}
+.dish .in{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.dish h3{font-size:1.6rem}
+.dish p{color:var(--mute);font-size:.95rem;flex:1}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.pr{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.4rem;color:var(--gold)}
+.mini{font-size:.9rem;font-weight:600;color:var(--fg);border:1.5px solid var(--gold);padding:8px 14px;border-radius:999px;text-decoration:none}
+.mini:hover{background:var(--gold);color:#1b1203}
+.note{margin-top:18px;color:var(--mute);font-size:.88rem}
+.res{background:var(--soft)}
+.grid{display:grid;gap:30px}
+@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+form{display:grid;gap:14px}
+label{font-weight:600;font-size:.95rem}
+input,select{width:100%;padding:14px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);color:var(--fg);font:inherit;margin-top:6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.info p{margin-bottom:14px}
+.info b{display:block;color:var(--gold);font-size:.8rem;letter-spacing:.15em;text-transform:uppercase}
+footer{padding:26px 0;color:var(--mute);font-size:.88rem;text-align:center}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:9;background:var(--navy);color:#f3ead9;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px calc(12px + env(safe-area-inset-bottom,0px));box-shadow:0 -6px 20px #0005}
+.bar small{color:#c9d6e3;display:block;line-height:1.2}
+@media(prefers-reduced-motion:no-preference){.hero h1{animation:up .9s ease both}.moon{animation:fl 7s ease-in-out infinite alternate}@keyframes up{from{opacity:0;transform:translateY(26px)}}@keyframes fl{to{transform:translateY(14px)}}}
+</style>
+</head>
+<body>
+<div class="demo">Maquette de démonstration réalisée par Pedrell pour SOKBARO · WhatsApp 0197799172</div>
+
+<header class="hero">
+ <div class="moon" aria-hidden="true"></div>
+ <div class="w">
+  <div class="brand">Restaurant gastronomique · Cotonou</div>
+  <h1>SOKBARO</h1>
+  <p class="t">Une table d’exception, du jazz feutré, la mer à deux pas.</p>
+  <div class="tags"><span>Cuisine gastronomique</span><span>Jazz au bord de la mer</span><span>Réservation WhatsApp</span></div>
+  <a class="btn" href="#reserver">Réserver une table</a>
+ </div>
+ <svg class="sea" viewBox="0 0 1200 90" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 50Q150 20 300 50T600 50T900 50T1200 50V90H0Z" fill="#12283f"/>
+  <path d="M0 66Q150 40 300 66T600 66T900 66T1200 66V90H0Z" fill="#fbf6ec" class="wv"/>
+ </svg>
+</header>
+
+<main>
+<section>
+ <div class="w">
+  <h2>L’expérience</h2>
+  <p class="sub">Plus qu’un repas : une soirée à vivre, du premier plat jusqu’au dessert.</p>
+  <div class="amb">
+   <div><span class="e">🎷</span><b>Ambiance jazz</b><span>Une musique douce, feutrée, pour dîner sans élever la voix.</span></div>
+   <div><span class="e">🌊</span><b>Au bord de la mer</b><span>Un cadre calme, avec la brise du large.</span></div>
+   <div><span class="e">🥂</span><b>Cuisine soignée</b><span>Des plats généreux, préparés avec des produits choisis.</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="menu">
+ <div class="w">
+  <h2>Nos plats signature</h2>
+  <p class="sub">Un aperçu de la carte. Touchez « Commander » pour écrire directement au restaurant.</p>
+  <div class="menu" id="menu-l"></div>
+  <p class="note">Plats et prix donnés à titre d’exemple dans cette maquette. Ils seront remplacés par votre vraie carte avec vos photos.</p>
+ </div>
+</section>
+
+<section id="reserver" class="res">
+ <div class="w grid">
+  <div>
+   <h2>Réserver une table</h2>
+   <p class="sub">Remplissez ces quelques lignes : votre message est prêt sur WhatsApp, il ne reste qu’à l’envoyer.</p>
+   <div class="info">
+    <p><b>Ouverture</b>Tous les soirs à partir de 18h00</p>
+    <p><b>Réservation</b>À l’avance, uniquement par WhatsApp</p>
+    <p><b>Lieu</b>Cotonou, au bord de la mer</p>
+   </div>
+  </div>
+  <form id="f">
+   <label>Votre nom<input id="nom" required autocomplete="name"></label>
+   <div class="two">
+    <label>Date<input id="date" type="date" required></label>
+    <label>Heure<select id="heure"><option>18h00</option><option>19h00</option><option selected>20h00</option><option>21h00</option><option>22h00</option></select></label>
+   </div>
+   <label>Nombre de personnes<select id="pers"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option><option>10 ou plus</option></select></label>
+   <button class="btn" type="submit">Envoyer sur WhatsApp</button>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer><div class="w">© <span id="an"></span> SOKBARO. Site réalisé par Pedrell · WhatsApp 0197799172</div></footer>
+
+<div class="bar"><div><b>Une table ?</b><small>Réservation sur WhatsApp</small></div><a class="btn" id="wa" href="#" target="_blank" rel="noopener">Réserver</a></div>
+
+<script>
+// ===== À PERSONNALISER =====
+var NUMERO = "2290197799172";   // pour la démo : numéro de Pedrell ; en version finale : numéro du restaurant
+var NOM = "SOKBARO";
+var PLATS = [
+ {e:"🥩",c:"c1",n:"Le plateau SOKBARO",d:"Brochettes de bœuf, poulet grillé, frites, riz et salade fraîche, à partager.",p:28000},
+ {e:"🍗",c:"c2",n:"Poulet braisé du chef",d:"Mariné toute la nuit, braisé au feu, servi avec alloco et piment doux.",p:12000},
+ {e:"🍔",c:"c3",n:"Burger gourmet",d:"Bœuf, cheddar fondu, salade croquante, frites maison.",p:8500},
+ {e:"🐟",c:"c4",n:"Poisson grillé du jour",d:"Pêche du jour, sauce citronnée, légumes sautés.",p:15000},
+ {e:"🍰",c:"c5",n:"Dessert aux fruits rouges",d:"Crème onctueuse et coulis de fruits rouges, servi frais.",p:6000},
+ {e:"🍹",c:"c6",n:"Cocktail signature",d:"Fruits frais de saison, menthe, un soupçon de gingembre.",p:5000}
+];
+// ===========================
+function fr(x){return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g," ")+" F"}
+function wa(t){return "https://wa.me/"+NUMERO+"?text="+encodeURIComponent(t)}
+document.getElementById('an').textContent=new Date().getFullYear();
+document.getElementById('wa').href=wa("Bonjour "+NOM+", je voudrais réserver une table.");
+var L=document.getElementById('menu-l');
+PLATS.forEach(function(p){
+  var d=document.createElement('article');d.className='dish';
+  d.innerHTML='<div class="pic '+p.c+'" aria-hidden="true">'+p.e+'</div><div class="in"><h3>'+p.n+'</h3><p>'+p.d+'</p><div class="row"><span class="pr">'+fr(p.p)+'</span><a class="mini" target="_blank" rel="noopener" href="'+wa("Bonjour "+NOM+", je voudrais commander : "+p.n+" ("+fr(p.p)+").")+'">Commander</a></div></div>';
+  L.appendChild(d);
+});
+var dt=document.getElementById('date');
+try{dt.min=new Date().toISOString().slice(0,10)}catch(e){}
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var m="Bonjour "+NOM+", je suis "+document.getElementById('nom').value+". Je voudrais réserver une table pour "+document.getElementById('pers').value+" personne(s) le "+dt.value+" à "+document.getElementById('heure').value+". Merci de me confirmer la disponibilité.";
+  var w=window.open(wa(m),"_blank");
+  if(!w){location.href=wa(m)}
+});
+</script>
+</body>
+</html>
